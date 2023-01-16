@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+
+<script>  
+    function validateform(){  
+    var name=document.myform.name.value;  
+    var age=document.myform.age.value;  
+    var gender=document.myform.gender.value;  
+    var email=document.myform.email.value;
+    var x="M";
+    var y="F";
+    var regEmail=/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/g;
+    if (name==null || name=="" || name.length<5){  
+      alert("Invalid name");  
+      return false;  
+    }else if(age==null || age=="" || age<15 || age>120){  
+      alert("Invalid age");  
+      return false;  
+      }else if(gender!=x ||gender!=y ||gender==null){
+        alert("Invalid Email")
+        return false;
+      }else if(email==null || regEmail.test(email)){
+        alert("Invalid Email")
+        return false;
+      }
+    }  
+    </script> 
+</head> 
+    <body style="background-color: beige;">  
+    <p>20191CSE0510</p>
+    <form name="myform" method="post" action="abc.jsp" onsubmit="return validateform()" >  
+    Name: <input type="text" name="name"><br/>  
+    age: <input type="number" name="age"><br/>  
+    gender: <input type="text" name="gender"><br/>  
+    email: <input type="text" name="email"><br/>
+    <input type="submit" value="register">  
+    </form>  
+</html>
